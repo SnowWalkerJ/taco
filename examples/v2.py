@@ -1,4 +1,4 @@
-from taco.v2 import *
+from taco import *
 
 
 @optimize
@@ -16,5 +16,5 @@ def f2(n):
 
 
 if __name__ == '__main__':
-  print(evaluate(f(1000)))
-  print(evaluate(map(f2, range(10))))
+  print(f(1000).eval())
+  print(map(f2, range(10)).eval())

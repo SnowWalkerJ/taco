@@ -301,8 +301,8 @@ class Machine {
 
 
 ComboProducer map(py::object func, const std::vector<py::object> &args) {
-  py::module v2 = py::module::import("taco.v2");
-  if (py::isinstance(func, v2.attr("OptimizedCall"))) {
+  py::module taco = py::module::import("taco");
+  if (py::isinstance(func, taco.attr("OptimizedCall"))) {
     func = func.attr("func");
   }
   std::vector<variant> objects;
@@ -317,8 +317,8 @@ ComboProducer map(py::object func, const std::vector<py::object> &args) {
 
 
 ComboProducer map_pure(py::object func, const std::vector<py::object> &args) {
-  py::module v2 = py::module::import("taco.v2");
-  if (py::isinstance(func, v2.attr("OptimizedCall"))) {
+  py::module taco = py::module::import("taco");
+  if (py::isinstance(func, taco.attr("OptimizedCall"))) {
     func = func.attr("func");
   }
   std::vector<variant> objects;

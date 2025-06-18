@@ -12,7 +12,6 @@ __all__ = [
   "abs",
   "add", "sub", "mul", "truediv", "floordiv", "mod", "pow",
   "eq", "ne", "ge", "gt", "le", "lt",
-  "evaluate",
   "OptimizedCall",
   "MultiReturnOptimizedCall",
 ]
@@ -51,11 +50,6 @@ class DebugMachine:
       else:
         self.right.append(item)
     return self.right
-
-
-def evaluate(obj):
-  machine = Machine([obj])
-  return machine.run()
 
 
 def optimize(func=None, *, num_returns=None):
